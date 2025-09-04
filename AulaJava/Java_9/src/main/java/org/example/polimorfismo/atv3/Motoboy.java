@@ -26,5 +26,10 @@ public class Motoboy extends Funcionario{
                 ", Setor: " + setor.getSetmenusculo() +
                 ", Salario base:" + salarioBase +
                 '}';
-    }           
+    }
+
+    @Override
+    public double getSalarioFinal() {
+        return super.salarioBase;
+    }
 }
