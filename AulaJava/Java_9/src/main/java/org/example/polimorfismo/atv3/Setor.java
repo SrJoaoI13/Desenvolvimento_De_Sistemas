@@ -5,9 +5,17 @@ public enum Setor {
     FINANCEIRO ("Financeiro"),
     OPERACOES ("Operacoes");
 
-    private String texto;
+    private String Setmenusculo;
 
-    Setor(String texto) {
-        this.texto = texto;
+    Setor(String setmenusculo) {
+        Setmenusculo = setmenusculo;
+    }
+
+    public String getSetmenusculo() {
+        return Setmenusculo;
+    }
+
+    public void setSetmenusculo(String setmenusculo) {
+        Setmenusculo = setmenusculo;
     }
 }

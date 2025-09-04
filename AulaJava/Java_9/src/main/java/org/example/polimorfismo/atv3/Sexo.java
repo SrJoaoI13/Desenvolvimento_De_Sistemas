@@ -1,14 +1,20 @@
 package org.example.polimorfismo.atv3;
 
 public enum Sexo {
-    MASCULINO ("Masculino", "M"),
-    FEMININO ("Feminino", "F");
+    MASCULINO ("Masculino"),
+    FEMININO ("Feminino");
 
-    private String texto;
-    private String caracter;
+    private String Smenusculo;
 
-    Sexo(String texto, String caracter) {
-        this.texto = texto;
-        this.caracter = caracter;
+    Sexo(String smenusculo) {
+        Smenusculo = smenusculo;
+    }
+
+    public String getSmenusculo() {
+        return Smenusculo;
+    }
+
+    public void setSmenusculo(String smenusculo) {
+        Smenusculo = smenusculo;
     }
 }
