@@ -7,5 +7,7 @@ public class Main {
 
         System.out.println(motoboy1.toString());
         System.out.println(diretor1.toString());
+
+        diretor1.admitir(motoboy1);
     }
 }

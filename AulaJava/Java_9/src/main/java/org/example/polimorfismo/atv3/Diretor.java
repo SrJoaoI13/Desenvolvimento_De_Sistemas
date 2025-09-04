@@ -9,12 +9,12 @@ public class Diretor  extends  Funcionario implements Contratacao{
 
     @Override
     public void admitir(Funcionario funcionario) {
-        System.out.println("Adimitindo funcionario: " + funcionario.Nome);
+        System.out.println("\nAdimitindo funcionario: " + funcionario.Nome);
     }
 
     @Override
     public void demitir(Funcionario funcionario) {
-        System.out.println("Demitindo funcionario: " + funcionario.Nome);
+        System.out.println("\nDemitindo funcionario: " + funcionario.Nome);
     }
 
     public double getPREMIO() {
