@@ -8,6 +8,7 @@ public class Diretor  extends  Funcionario implements Contratacao{
     }
     
     public double getSalarioFinal() {
+
         return salarioBase + (salarioBase * PREMIO);
     }
 
@@ -20,11 +21,22 @@ public class Diretor  extends  Funcionario implements Contratacao{
     public void demitir(Funcionario funcionario) {
 
     }
+
     @Override
     public String toString() {
-        return super.toString() +
+        return "\nDiretor {" +
+                "Nome: '" + Nome + '\'' +
+                ", Data de Nascimento: '" + DataNascimento + '\'' +
+                ", sexo: " + sexo +
+                ", setor: " + setor +
+                ", salario Base: " + salarioBase +
                 "\nPrêmio: " + (PREMIO * 100) + "%" +
-                "\nSalário Final: " + getSalarioFinal();
+                "\nSalário Final: " + getSalarioFinal() +
+                '}';
     }
+
 }
+
+
+
 
