@@ -3,15 +3,12 @@ package org.example.polimorfismo.atv3;
 public class Diretor  extends  Funcionario implements Contratacao{
     private static final double PREMIO = 0.2;
 
-    @Override
-    public String toString() {
-        return "Diretor{" +
-                "Nome='" + Nome + '\'' +
-                ", DataNascimento='" + DataNascimento + '\'' +
-                ", sexo=" + sexo +
-                ", setor=" + setor +
-                ", salarioBase=" + salarioBase +
-                '}';
+    public Diretor(String nome, String dataNascimento, Sexo sexo, Setor setor, double salarioBase) {
+        super(nome, dataNascimento, sexo, setor, salarioBase);
+    }
+    
+    public double getSalarioFinal() {
+        return salarioBase + (salarioBase * PREMIO);
     }
 
     @Override
@@ -23,4 +20,11 @@ public class Diretor  extends  Funcionario implements Contratacao{
     public void demitir(Funcionario funcionario) {
 
     }
+    @Override
+    public String toString() {
+        return super.toString() +
+                "\nPrêmio: " + (PREMIO * 100) + "%" +
+                "\nSalário Final: " + getSalarioFinal();
+    }
 }
+

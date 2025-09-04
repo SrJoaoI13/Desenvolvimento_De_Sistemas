@@ -55,14 +55,4 @@ public abstract class Funcionario {
         this.salarioBase = salarioBase;
     }
 
-    @Override
-    public String toString() {
-        return "Funcionario{" +
-                "Nome='" + Nome + '\'' +
-                ", DataNascimento='" + DataNascimento + '\'' +
-                ", sexo=" + sexo +
-                ", setor=" + setor +
-                ", salarioBase=" + salarioBase +
-                '}';
-    }
 }
