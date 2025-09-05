@@ -10,11 +10,12 @@ public class Gerente extends CargoDeConfianca{
         return "Gerente{" +
                 "bonificacao=" + bonificacao +
                 super.toString()+
+                ",Salario Final: "+ obterSalarioFinal() +
                 '}';
     }
 
     @Override
-    public double obterSalarioFinal(Funcionario funcionario) {
+    public double obterSalarioFinal() {
         return super.SalarioBase*Bonificacao.GERENTE.getValor();
     }
 }

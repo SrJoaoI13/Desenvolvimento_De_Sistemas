@@ -9,11 +9,13 @@ public class Diretor extends CargoDeConfianca implements Contratacao{
 
     @Override
     public void demitir(Funcionario funcionario) {
+        System.out.println("\nDemitindo funcionario: " + funcionario.Nome);
 
     }
 
     @Override
     public void admitir(Funcionario funcionario) {
+        System.out.println("\nAdimitindo funcionario: " + funcionario.Nome);
 
     }
 
@@ -22,13 +24,13 @@ public class Diretor extends CargoDeConfianca implements Contratacao{
     }
 
 
-    public double obterSalarioFinal(Funcionario funcionario) {
+    public double obterSalarioFinal() {
 
-        double salarioBase = funcionario.getSalarioBase();
+        double salarioBase = getSalarioBase();
 
         double SalarioBonificacao = salarioBase * Bonificacao.DIRETOR.getValor();
 
-        double BonificacaoPREMIO = SalarioBonificacao * PREMIO;
+        double BonificacaoPREMIO = salarioBase * PREMIO;
 
         double juncao = SalarioBonificacao + BonificacaoPREMIO;
 
@@ -42,7 +44,7 @@ public class Diretor extends CargoDeConfianca implements Contratacao{
                 "PREMIO: " + PREMIO +
                 ", bonificacao: " + bonificacao +
                 super.toString() +
-                ", Salario Final: "+ obterSalarioFinal +
+                ", Salario Final: "+ this.obterSalarioFinal() +
         '}';
     }
 }
