@@ -1,10 +1,10 @@
 package org.example.polimorfismo.atv4;
 
 public class Diretor extends CargoDeConfianca implements Contratacao{
-    private final double PREMIO = 0.1;
+    private final double PREMIO = 1.1;
 
-    public Diretor(String nome, String CPF, String RG, Sexo sexo, double salarioBase, String dataNascimento, String dataAdmissao, Bonificacao bonificacao) {
-        super(nome, CPF, RG, sexo, salarioBase, dataNascimento, dataAdmissao, bonificacao);
+    public Diretor(String nome, String CPF, String RG, Sexo sexo, double salarioBase, String dataNascimento, String dataAdmissao) {
+        super(nome, CPF, RG, sexo, salarioBase, dataNascimento, dataAdmissao, Bonificacao.GERENTE);
     }
 
     @Override
@@ -21,17 +21,28 @@ public class Diretor extends CargoDeConfianca implements Contratacao{
         return PREMIO;
     }
 
+
+    public double obterSalarioFinal(Funcionario funcionario) {
+
+        double salarioBase = funcionario.getSalarioBase();
+
+        double SalarioBonificacao = salarioBase * Bonificacao.DIRETOR.getValor();
+
+        double BonificacaoPREMIO = SalarioBonificacao * PREMIO;
+
+        double juncao = SalarioBonificacao + BonificacaoPREMIO;
+
+        double salarioFinal = juncao - salarioBase;
+        return salarioFinal;
+    }
+
     @Override
     public String toString() {
         return "Diretor {" +
                 "PREMIO: " + PREMIO +
                 ", bonificacao: " + bonificacao +
                 super.toString() +
-                '}';
-    }
-
-    @Override
-    public double obterSalarioFinal(Funcionario funcionario) {
-        return super.(SalarioBase*PREMIO);
+                ", Salario Final: "+ obterSalarioFinal +
+        '}';
     }
 }
