@@ -45,19 +45,15 @@ public abstract class Funcionario implements SalarioFinal{
         Salariobase = salariobase;
     }
 
-
     @Override
     public String toString() {
         return "Funcionario {" +
                 "nome: '" + nome + '\'' +
-                ", CPf: '" + CPf + '\'' +
+                ", CPF:'" + CPf + '\'' +
                 ", Data de Nascimento: '" + DataNascimento + '\'' +
-                ", Salario base: " + Salariobase +
+                ", Salariobase: " + Salariobase +
                 '}';
-    }
 
-    @Override
-    public double obterSalarioFinal(Funcionario funcionario) {
-        return ;
     }
+}
 }

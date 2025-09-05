@@ -1,6 +1,6 @@
 package org.example.polimorfismo.atv4;
 
-public class Motoboy extends  Funcionario{
+public  class Motoboy extends Funcionario{
     private String placaDaMoto;
 
     public Motoboy(String nome, String CPf, String dataNascimento, double salariobase, String placaDaMoto) {
@@ -25,5 +25,10 @@ public class Motoboy extends  Funcionario{
                 ", Data de Nascimento: '" + DataNascimento + '\'' +
                 ", Salario base: " + Salariobase +
                 '}';
+    }
+
+    @Override
+    public double obterSalarioFinal() {
+        return super.Salariobase;
     }
 }

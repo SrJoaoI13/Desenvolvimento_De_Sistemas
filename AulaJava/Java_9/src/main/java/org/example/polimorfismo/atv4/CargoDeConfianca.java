@@ -12,4 +12,5 @@ public abstract class CargoDeConfianca extends Funcionario {
         this.bonificacao = bonificacao;
 
     }
+
 }
