@@ -1,4 +1,4 @@
 package org.example.polimorfismo.atv4;
 
-public class Funcionario {
+public enum Sexo {
 }
