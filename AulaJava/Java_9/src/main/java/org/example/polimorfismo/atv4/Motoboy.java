@@ -24,6 +24,7 @@ public  class Motoboy extends Funcionario{
                 ", CPF: '" + CPf + '\'' +
                 ", Data de Nascimento: '" + DataNascimento + '\'' +
                 ", Salario base: " + Salariobase +
+                ", Salario Final: " + this.obterSalarioFinal() +
                 '}';
     }
 
