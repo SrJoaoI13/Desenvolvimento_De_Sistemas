@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/senai")
-public class Welcome {
+public class  Welcome {
 //ende point ponto de acesso
     @GetMapping("/")
     public String mensagem(){
