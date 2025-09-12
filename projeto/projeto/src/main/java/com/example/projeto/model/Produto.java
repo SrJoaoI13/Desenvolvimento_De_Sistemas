@@ -11,7 +11,7 @@ public class Produto {
     private Long id;
 
     @Column(nullable = false)
-    private String nome;
+    private String produto;
 
     @Column(nullable = false)
     private double valor;
@@ -19,9 +19,9 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(Long id, String nome, double valor) {
+    public Produto(Long id, String produto, double valor) {
         this.id = id;
-        this.nome = nome;
+        this.produto = produto;
         this.valor = valor;
     }
 
@@ -33,12 +33,12 @@ public class Produto {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getproduto() {
+        return produto;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setproduto(String produto) {
+        this.produto = produto;
     }
 
     public double getValor() {
@@ -53,7 +53,7 @@ public class Produto {
     public String toString() {
         return "Produto{" +
                 "id=" + id +
-                ", nome='" + nome + '\'' +
+                ", produto='" + produto + '\'' +
                 ", valor=" + valor +
                 '}';
     }
