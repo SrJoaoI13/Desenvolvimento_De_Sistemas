@@ -16,6 +16,9 @@ public class Cliente {
     @Column(nullable = false)
     private String Telefone;
 
+    public Cliente() {
+    }
+
     public Cliente(Long id, String nome, String telefone) {
         this.id = id;
         this.nome = nome;
