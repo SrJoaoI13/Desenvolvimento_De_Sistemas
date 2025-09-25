@@ -14,24 +14,20 @@ public class Cliente {
     @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false, unique = true)
-    private String email;
-
     @Column(nullable = false)
-    private String senha;
+    private String dataNascimento;
 
-    @Column(nullable = false)
-    private String telefone;
+    @Column(nullable = false,unique = true )
+    private String protocoloAtendimento;
 
     public Cliente() {
     }
 
-    public Cliente(UUID id, String nome, String email, String senha, String telefone) {
+    public Cliente(UUID id, String nome, String dataNascimento, String protocoloAtendimento) {
         this.id = id;
         this.nome = nome;
-        this.email = email;
-        this.senha = senha;
-        this.telefone = telefone;
+        this.dataNascimento = dataNascimento;
+        this.protocoloAtendimento = protocoloAtendimento;
     }
 
     public UUID getId() {
@@ -50,27 +46,19 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDataNascimento() {
+        return dataNascimento;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
     }
 
-    public String getSenha() {
-        return senha;
+    public String getProtocoloAtendimento() {
+        return protocoloAtendimento;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setProtocoloAtendimento(String protocoloAtendimento) {
+        this.protocoloAtendimento = protocoloAtendimento;
     }
 }

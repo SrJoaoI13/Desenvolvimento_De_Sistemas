@@ -11,5 +11,6 @@ import java.util.UUID;
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, UUID> {
     //nao para aplicação na cosulta em caso de retorna nulo
-    Optional<Usuario> findByemail(String email);
+    Optional<Usuario> findByprotocoloAtendimentoe(String protocoloAtendimento);
+
 }
