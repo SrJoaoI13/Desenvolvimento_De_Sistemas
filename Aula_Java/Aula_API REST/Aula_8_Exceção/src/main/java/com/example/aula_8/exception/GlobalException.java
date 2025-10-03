@@ -10,10 +10,25 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalException {
 
+    @ExceptionHandler(EmailCadastradoException.class)
+    public ResponseEntity<Map<String, Object>> 
+    handleIllegalArgumentException(EmailCadastradoException errro) {
+        return ResponseEntity.status(HttpStatus.CONFLICT
+        ).body(Map.of("Mensagem", errro.getMessage(),"Status", "erro" ));
+    }
+
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Map<String, Object>> 
     handleIllegalArgumentException(IllegalArgumentException errro) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST
-        ).body(Map.of("Mensagem", errro.getMessage()));
+        ).body(Map.of("Mensagem", errro.getMessage(),"Status", "erro" ));
     }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<Map<String, Object>> 
+    handlerRuntimeException(RuntimeException errro) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST
+        ).body(Map.of("Mensagem", errro.getMessage(),"Status", "erro" ));
+    }
+
 }

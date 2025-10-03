@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.aula_8.exception.EmailCadastradoException;
 import com.example.aula_8.model.UsuarioModel;
 import com.example.aula_8.repository.UsuarioRepository;
 
@@ -26,7 +27,7 @@ public class UsuarioService {
     //  Se não estiver, salvar o usuario
     public UsuarioModel salvar(UsuarioModel usuario) {
         if (usuarioRepository.findByEmail(usuario.getEmail()).isPresent()) {
-            throw new IllegalArgumentException("Usuario já cadastrado");
+            throw new EmailCadastradoException("Usuario já cadastrado");
             
         }
         return usuarioRepository.save(usuario);
@@ -38,7 +39,7 @@ public class UsuarioService {
 //   Se existir, atualizar o usuario
     public UsuarioModel atualizar (Long id, UsuarioModel usuario) {
         if(!usuarioRepository.existsById(id)){
-            throw new IllegalArgumentException("Usuario não encontrado");
+            throw new RuntimeException("Usuario não encontrado");
         }
             return usuarioRepository.save(usuario);
     }
@@ -49,7 +50,7 @@ public class UsuarioService {
     // Se existir, deletar o usuario
     public void deletar(Long id) {
         if (!usuarioRepository.existsById(id)) {
-            throw new IllegalArgumentException("Usuario não encontrado");
+            throw new RuntimeException("Usuario não encontrado");
         }
         usuarioRepository.deleteById(id);
     }
