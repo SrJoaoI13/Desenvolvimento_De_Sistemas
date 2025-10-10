@@ -26,7 +26,7 @@ public class ClienteController {
     public ResponseEntity<Map<String, Object>> salvar(@RequestBody ClienteModel clienteModel){
         return ResponseEntity.status(HttpStatus.CREATED).body(Map.of(
                 "mensagem","Cliente Cadastrado com Sucesso",
-                "cliente", clienteService.salvar(clienteModel)
+                "sucesso", true
         ));
     }
 
@@ -34,13 +34,13 @@ public class ClienteController {
     public ResponseEntity<Map<String, Object>> atualizar(@PathVariable Long id, @RequestBody ClienteModel clienteModel){
         return ResponseEntity.status(HttpStatus.OK).body(Map.of(
                 "mensagem","Cliente Atualizado com Sucesso",
-                "cliente", clienteService.atualizar(id, clienteModel)
+                "sucesso", true
         ));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, Object>> excluir(@PathVariable Long id){
         clienteService.excluir(id);
-        return ResponseEntity.status(HttpStatus.OK).body(Map.of("mensagem","Cliente Excluido com Sucesso"));
+        return ResponseEntity.status(HttpStatus.OK).body(Map.of("mensagem","Cliente Excluido com Sucesso","sucesso",true));
     }
 }

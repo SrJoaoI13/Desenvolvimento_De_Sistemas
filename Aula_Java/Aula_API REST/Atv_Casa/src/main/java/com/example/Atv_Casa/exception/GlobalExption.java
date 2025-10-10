@@ -14,13 +14,13 @@ public class GlobalExption {
     public ResponseEntity<Map<String, Object>>
     handleIllegalArgumentException(IllegalArgumentException erro){
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                .body(Map.of("Mensagem", erro.getMessage(),"Status","erro"));
+                .body(Map.of("Mensagem", erro.getMessage(),"sucesso",false));
     }
 
     @ExceptionHandler(RuntimeException.class)
     public ResponseEntity<Map<String, Object>>
     handleRuntimeException(IllegalArgumentException erro){
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                .body(Map.of("Mensagem", erro.getMessage(),"Status","erro"));
+                .body(Map.of("Mensagem", erro.getMessage(),"sucesso",false));
     }
 }

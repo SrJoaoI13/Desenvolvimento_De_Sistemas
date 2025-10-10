@@ -1,7 +1,6 @@
 package com.example.Atv_Casa.service;
 
 import com.example.Atv_Casa.model.FuncionarioModel;
-import com.example.Atv_Casa.repository.ClienteRepository;
 import com.example.Atv_Casa.repository.FuncionarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,21 +20,21 @@ public class FuncionarioService {
 
     public FuncionarioModel salvar(FuncionarioModel funcionarioModel){
         if(funcionarioRepository.findBymatricula(funcionarioModel.getMatricula()).isPresent()){
-            throw  new IllegalArgumentException("Funcionario ja Cadastrado");
+            throw  new IllegalArgumentException("funcionario ja Cadastrado");
         }
         return funcionarioRepository.save(funcionarioModel);
     }
 
     public FuncionarioModel atualizar(Long id,FuncionarioModel funcionarioModel){
         if(!funcionarioRepository.existsById(id)){
-            throw  new RuntimeException("Funcionario não encontrado");
+            throw  new RuntimeException("funcionario não encontrado");
         }
         return funcionarioRepository.save(funcionarioModel);
     }
 
     public void deletar(Long id){
         if(!funcionarioRepository.existsById(id)){
-            throw  new RuntimeException("Funcionario não encontrado");
+            throw  new RuntimeException("funcionario não encontrado");
         }
         funcionarioRepository.deleteById(id);
     }

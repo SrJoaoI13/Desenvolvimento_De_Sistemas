@@ -24,18 +24,18 @@ public class FuncionarioController {
     @PostMapping
     public ResponseEntity<Map<String, Object>> salvar (@RequestBody FuncionarioModel funcionarioModel){
         return ResponseEntity.status(HttpStatus.CREATED).body(Map.of("mensagem","Funcionario Cadastrado com Sucesso",
-                "funcionario",funcionarioService.salvar(funcionarioModel)));
+                "sucesso",true));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Map<String, Object>> atualizar (@RequestBody Long id, FuncionarioModel funcionarioModel){
         return ResponseEntity.status(HttpStatus.OK).body(Map.of("mensagem","Funcionario Atualizado com Sucesso",
-                "funcionario",funcionarioService.atualizar(id, funcionarioModel)));
+                "sucesso",true));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, Object>> excluir (Long id){
         funcionarioService.deletar(id);
-        return ResponseEntity.status(HttpStatus.OK).body(Map.of("mensagem","Funcionario Excluido com Sucesso"));
+        return ResponseEntity.status(HttpStatus.OK).body(Map.of("mensagem","Funcionario Excluido com Sucesso","sucesso",true));
     }
 }

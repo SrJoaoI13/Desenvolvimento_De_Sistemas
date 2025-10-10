@@ -18,14 +18,14 @@ public class ClienteService {
 
     public ClienteModel salvar(ClienteModel clienteModel){
         if (clienteRepository.findByemail(clienteModel.getEmail()).isPresent()){
-            throw  new IllegalArgumentException("Cliente ja Cadastrado");
+            throw  new IllegalArgumentException("cliente ja Cadastrado");
         }
         return clienteRepository.save(clienteModel);
     }
 
      public  ClienteModel atualizar(Long id,ClienteModel clienteModel){
         if (!clienteRepository.existsById(id)){
-            throw  new RuntimeException("Cliente não encontrado");
+            throw  new RuntimeException("cliente não encontrado");
         }
         clienteModel.setId(id);
         return clienteRepository.save(clienteModel);
@@ -34,7 +34,7 @@ public class ClienteService {
 
     public void excluir(Long id){
         if (!clienteRepository.existsById(id)){
-            throw new RuntimeException("Cliente nao encontrado");
+            throw new RuntimeException("cliente nao encontrado");
         }
         clienteRepository.deleteById(id);
     }
