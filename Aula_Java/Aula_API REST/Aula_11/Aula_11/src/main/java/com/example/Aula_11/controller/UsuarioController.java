@@ -38,7 +38,7 @@ public class UsuarioController {
     }
 
     //UPDATE
-
+    @PutMapping("/{id}")
     public ResponseEntity<Map<String, Object>> atualizar(
             @PathVariable Long id,
             @Valid @RequestBody UsuarioRequestDTO dto){
@@ -53,6 +53,7 @@ public class UsuarioController {
     }
 
     // DELETE
+    @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, Object>> excluir(@PathVariable Long id){
         usuarioService.excluirUsuario(id);
         return  ResponseEntity
