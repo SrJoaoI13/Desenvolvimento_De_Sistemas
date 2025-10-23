@@ -1,0 +1,19 @@
+body{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #6591af;
+    
+}
+
+img{
+    /*tamanhi da imagem.*/
+    width: 500px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+
+h1{
+    font-size: 100px;
+}
