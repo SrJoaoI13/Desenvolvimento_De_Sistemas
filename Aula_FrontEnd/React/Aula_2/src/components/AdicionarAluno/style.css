@@ -1,0 +1,33 @@
+/* Centraliza todo o conteúdo da página no centro da tela */
+body {
+  display: flex; /* transforma o body em um contêiner flexível */
+  justify-content: center; /* centraliza o conteúdo na horizontal */
+  align-items: center; /* centraliza o conteúdo na vertical */
+  height: 100vh; /* faz o body ocupar 100% da altura da tela */
+  margin: 0; /* remove margens padrão do navegador */
+  background-color: #fff; /* cor de fundo (opcional) */
+}
+
+/* Centraliza o conteúdo principal (div do componente) */
+div {
+  display: flex; /* usa flexbox dentro da div */
+  flex-direction: column; /* organiza os elementos um abaixo do outro */
+  align-items: center; /* centraliza os itens horizontalmente */
+  text-align: center; /* centraliza o texto dentro da div */
+}
+
+/* Estiliza o formulário */
+form {
+  display: flex; /* transforma o formulário em um contêiner flex */
+  flex-direction: column; /* coloca os inputs e o botão em coluna (um abaixo do outro) */
+  gap: 10px; /* adiciona espaçamento vertical entre os campos */
+  width: 250px; /* define uma largura fixa para o formulário */
+}
+
+/* Estiliza os campos e o botão */
+input,
+button {
+  width: 100%; /* ocupa toda a largura do formulário */
+  padding: 8px; /* adiciona espaço interno (altura e conforto visual) */
+  box-sizing: border-box; /* garante que padding conte dentro da largura total */
+}
