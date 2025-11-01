@@ -5,7 +5,7 @@ body {
   align-items: center; /* centraliza o conteúdo na vertical */
   height: 100vh; /* faz o body ocupar 100% da altura da tela */
   margin: 0; /* remove margens padrão do navegador */
-  background-color: #fff; /* cor de fundo (opcional) */
+  background-color: #ffffff; /* cor de fundo (opcional) */
 }
 
 /* Centraliza o conteúdo principal (div do componente) */
@@ -30,4 +30,18 @@ button {
   width: 100%; /* ocupa toda a largura do formulário */
   padding: 8px; /* adiciona espaço interno (altura e conforto visual) */
   box-sizing: border-box; /* garante que padding conte dentro da largura total */
+}
+/* Personalização do botão */
+button {
+  background-color: #5f5f5f; /* cor de fundo do botão */
+  color: white; /* cor do texto */
+  border: none; /* remove a borda padrão */
+  border-radius: 5px; /* cantos arredondados */
+  cursor: pointer; /* muda o cursor para "mãozinha" */
+  transition: background-color 0.3s; /* animação suave ao mudar a cor */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+button:hover {
+  background-color: #0056b3; /* cor mais escura quando o mouse passa */
 }
