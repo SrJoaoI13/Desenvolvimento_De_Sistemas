@@ -1,0 +1,28 @@
+.sobre-nos {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  line-height: 1.8;
+}
+
+.sobre-nos h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+.sobre-nos p {
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+.sobre-nos ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sobre-nos li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+}
