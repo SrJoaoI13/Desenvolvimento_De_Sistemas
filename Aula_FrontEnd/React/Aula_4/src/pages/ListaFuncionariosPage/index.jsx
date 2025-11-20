@@ -19,9 +19,14 @@ export default function ListaFuncionariosPage() {
             } finally {
                 setCarregando(false);
             }
-
-            
         }
+        buscarFuncionarios();
+    }, []);
+
+    if (carregando) {
+        return <div>Carregando funcionários...</div>;
+    }
+
     return(
         <>
         
