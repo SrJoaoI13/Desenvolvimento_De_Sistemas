@@ -1,6 +1,6 @@
 import './style.css';
 
-export default function () {
+export default function ListaFuncionariosPAge() {
     return(
         <>
         
